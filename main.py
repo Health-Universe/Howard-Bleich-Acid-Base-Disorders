@@ -1,11 +1,7 @@
 import streamlit as st
 
 # Define function to calculate the evaluation of acid base disorders
-def calculate_disorder(pH, pCO2, HCO3, Albumin, Na, Cl):
-    '''
-    Here you would use the specific formulas provided by Howard Bleich. 
-    For the sake of this example, let's assume they are basic operations.
-    '''
+def calculate_disorder(pH, pCO2, HCO3, Albumin, Na, K, Cl):
     anion_gap = (Na + K) - (Cl + HCO3)
     ag_corrected = anion_gap + 2.5 * (4.5 - Albumin)
 
@@ -34,10 +30,11 @@ pCO2 = st.number_input('pCO2 in mmHg (Normal range: 35-45 mmHg)', min_value=0.0)
 HCO3 = st.number_input('HCO3 in mEq/L (Normal range: 22-28 mEq/L)', min_value=0.0)
 Albumin = st.number_input('Albumin in g/dL (Normal range: 3.4-5.4 g/dL)', min_value=0.0)
 Na = st.number_input('Na in mEq/L (Normal range: 135-145 mEq/L)', min_value=0.0)
+K = st.number_input('K in mEq/L (Normal range: 3.5-5.1 mEq/L)', min_value=0.0)
 Cl = st.number_input('Cl in mEq/L (Normal range: 96-106 mEq/L)', min_value=0.0)
 
 if st.button('Calculate'):
-    result = calculate_disorder(pH, pCO2, HCO3, Albumin, Na, Cl)
+    result = calculate_disorder(pH, pCO2, HCO3, Albumin, Na, K, Cl)
     st.markdown("## Results")
     st.markdown("The result represents the probable acid-base imbalance based on the given parameters.")
     st.write(f'The result is: **{result}**')
