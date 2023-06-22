@@ -10,7 +10,7 @@ Data Input: The user enters the required biochemical measurements including pH, 
 
 - Output: The application will then provide an output suggesting the acid-base disorder, based on the entered values.
 
-##Guidelines:
+## Guidelines:
 - Correct Units: Always make sure to enter the parameters in their respective standard units to ensure accurate results.
 
 - Data Accuracy: The accuracy of the results is highly dependent on the accuracy of the entered data. Therefore, users should double-check the entered parameters for any potential input errors.
